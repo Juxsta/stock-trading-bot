@@ -1,6 +1,5 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/docker-existing-dockerfile
 {
-
 	"name": "Python 3",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"build": {
@@ -14,19 +13,27 @@
 		"--env-file",
 		"./.env"
 	],
-
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 	"postCreateCommand": "pip install -r requirements.txt",
-
+	// add extension
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"KevinRose.vsc-python-indent",
+				"genieai.chatgpt-vscode",
+				"GitHub.copilot",
+				"eamodio.gitlens",
+				"donjayamanne.python-extension-pack"
+			]
+		}
+	},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
-
 	// Uncomment the next line to run commands after the container is created.
-
 	// Configure tool-specific properties.
 	// "customizations": {},
-
 	// Uncomment to connect as an existing user other than the container default. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "vscode"
 }
